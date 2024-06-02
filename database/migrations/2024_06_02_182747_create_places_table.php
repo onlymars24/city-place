@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('places', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('descr');
+            $table->json('images');
+            $table->string('location');
+            $table->string('avatar');
+            $table->integer('type_id');
             $table->timestamps();
         });
     }
