@@ -9,7 +9,7 @@ class TypeController extends Controller
 {
     public function all(){
         return response([
-            'types' => Type::all();
+            'types' => Type::all()
         ]);
     }
 }
