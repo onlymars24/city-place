@@ -10,13 +10,13 @@ class PlaceController extends Controller
 {
     public function all(Request $request){
         return response([
-            'places' => Place::all()
+            'places' => Place::with('type')->all()
         ]);
     }
 
     public function one(Request $request){
         return response([
-            'place' => Place::find($request->placeId)
+            'place' => Place::with('type')->find($request->placeId)
         ]);
     }
 

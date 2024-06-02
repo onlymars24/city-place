@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->text('descr');
             $table->json('images');
-            $table->string('location');
+            $table->float('location_x');
+            $table->float('location_y');
+            $table->string('location_address');
             $table->string('avatar');
             $table->integer('type_id');
             $table->timestamps();
