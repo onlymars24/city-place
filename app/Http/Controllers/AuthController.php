@@ -58,4 +58,21 @@ class AuthController extends Controller
             'user' => $user
         ]);
     }
+
+    public function edit(Request $request){
+        $user = User::find(Auth::id());
+
+        $user->name = $request->name;
+        $user->surname = $request->surname;
+        $user->patronymic = $request->patronymic;
+        $user->birthday = $request->birthday;
+        $user->gender = $request->gender;
+        $user->city = $request->city;
+        $user->phone = $request->phone;
+        $user->save();
+
+        return response([
+            'user' => $user
+        ]);
+    }
 }

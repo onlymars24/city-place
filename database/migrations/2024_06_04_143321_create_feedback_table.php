@@ -13,16 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('places', function (Blueprint $table) {
+        Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('descr');
-            $table->json('images')->nullable();
-            $table->float('location_x');
-            $table->float('location_y');
-            $table->string('location_address');
-            $table->string('avatar')->nullable();
-            $table->integer('type_id');
             $table->timestamps();
         });
     }
@@ -34,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('places');
+        Schema::dropIfExists('feedback');
     }
 };

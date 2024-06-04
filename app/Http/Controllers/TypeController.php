@@ -12,4 +12,13 @@ class TypeController extends Controller
             'types' => Type::all()
         ]);
     }
+
+    public function create(Request $request){
+        $type = Type::create([
+            'name' => $request->name
+        ]);
+        return response([
+            'type' => $type
+        ]);
+    }
 }

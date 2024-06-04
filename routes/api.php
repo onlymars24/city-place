@@ -20,6 +20,7 @@ use App\Http\Controllers\FavoriteController;
 
 Route::middleware('auth:api')->group(function() {
     Route::get('/user', [AuthController::class, 'user']);
+    Route::get('/user/edit', [AuthController::class, 'user']);
     Route::post('/favorite/add', [FavoriteController::class, 'add']);
     Route::post('/favorite/delete', [FavoriteController::class, 'delete']);
 });
@@ -29,8 +30,10 @@ Route::post('/login', [AuthController::class, 'login']);
 
 
 Route::get('/types', [TypeController::class, 'all']);
+Route::post('/type/create', [TypeController::class, 'create']);
 
 Route::get('/places', [PlaceController::class, 'all']);
 Route::get('/place', [PlaceController::class, 'one']);
 Route::get('/places/type', [PlaceController::class, 'type']);
-
+Route::post('/place/create', [PlaceController::class, 'create']);
+Route::post('/place/edit', [PlaceController::class, 'edit']);
