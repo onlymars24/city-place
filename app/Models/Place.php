@@ -28,4 +28,9 @@ class Place extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    public function feedbacks()
+    {
+        return $this->belongsToMany(Feedback::class);
+    }
 }
