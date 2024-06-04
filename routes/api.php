@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\PlaceController;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,9 @@ use App\Http\Controllers\PlaceController;
 */
 
 Route::middleware('auth:api')->group(function() {
-    
+    Route::get('/user', [AuthController::class, 'user']);
+    Route::post('/favorite/add', [FavoriteController::class, 'add']);
+    Route::post('/favorite/delete', [FavoriteController::class, 'delete']);
 });
 
 Route::post('/register', [AuthController::class, 'register']);

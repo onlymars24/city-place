@@ -51,4 +51,11 @@ class AuthController extends Controller
             'token' => $token
         ]);
     }
+
+    public function user(){
+        $user = User::with('favorites')->find(Auth::id());
+        return response([
+            'user' => $user
+        ]);
+    }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/qwerty', function () {
+    $userId = 1;
+    $placeId = 2;
+    $user = User::with('favorites')->find($userId);
+    // dd($user);
+    // $user->favorites()->attach($placeId);
+    $user->favorites()->detach($placeId);
+
 });
