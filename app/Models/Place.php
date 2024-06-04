@@ -13,7 +13,9 @@ class Place extends Model
         'name',
         'descr',
         'images',
-        'location',
+        'location_x',
+        'location_y',
+        'location_address',
         'avatar',
         'type_id',
     ];
