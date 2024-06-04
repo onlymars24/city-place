@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\FeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,7 @@ Route::get('/place', [PlaceController::class, 'one']);
 Route::get('/places/type', [PlaceController::class, 'type']);
 Route::post('/place/create', [PlaceController::class, 'create']);
 Route::post('/place/edit', [PlaceController::class, 'edit']);
+
+Route::post('/feedback/create', [FeedbackController::class, 'create']);
+Route::get('/feedback/place', [FeedbackController::class, 'edit']);
+Route::get('/feedback', [FeedbackController::class, 'one']);
