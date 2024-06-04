@@ -43,4 +43,8 @@ class FeedbackController extends Controller
             'feedbacks' => $place->feedbacks
         ]);
     }
+
+    public function uploadImages(Request $request){
+        
+    }
 }
