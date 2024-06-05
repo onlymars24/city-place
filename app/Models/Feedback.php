@@ -16,4 +16,10 @@ class Feedback extends Model
         'score',
         'image',
     ];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
