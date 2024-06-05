@@ -32,7 +32,7 @@ class FeedbackController extends Controller
     public function place(Request $request){
         $place = Place::find($request->placeId);
         return response([
-            'feedbacks' => $place->feedbacks
+            'feedbacks' => $place
         ]);
     }
 
