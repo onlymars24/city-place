@@ -38,10 +38,10 @@ Route::get('/place', [PlaceController::class, 'one']);
 Route::get('/places/type', [PlaceController::class, 'type']);
 Route::post('/place/create', [PlaceController::class, 'create']);
 Route::post('/place/edit', [PlaceController::class, 'edit']);
-Route::get('/place/upload/image', [PlaceController::class, 'uploadImage']);
-Route::get('/place/upload/avatar', [PlaceController::class, 'uploadAvatar']);
+Route::post('/place/upload/image', [PlaceController::class, 'uploadImage']);
+Route::post('/place/upload/avatar', [PlaceController::class, 'uploadAvatar']);
 
 Route::post('/feedback/create', [FeedbackController::class, 'create']);
 Route::get('/feedback/place', [FeedbackController::class, 'place']);
 Route::get('/feedback', [FeedbackController::class, 'one']);
-Route::get('/feedback/upload/image', [FeedbackController::class, 'uploadImage']);
+Route::post('/feedback/upload/image', [FeedbackController::class, 'uploadImage']);
