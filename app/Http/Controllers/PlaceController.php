@@ -42,7 +42,7 @@ class PlaceController extends Controller
     }
 
     public function edit(Request $request){
-        $place = Place::find($request);
+        $place = Place::find($request->placeId);
         $place->name = $request->name;
         $place->descr = $request->descr;
         $place->location_x = $request->location_x;
