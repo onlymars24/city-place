@@ -85,7 +85,7 @@ class AuthController extends Controller
             $path = $file->store('image');
             $row = DB::table('users')->find(Auth::id());
             $filePath = public_path($row->avatar);
-            DB::table('places')->where('id', Auth::id())->update(['avatar' => $path]);
+            DB::table('users')->where('id', Auth::id())->update(['avatar' => $path]);
         }
     }
 }
