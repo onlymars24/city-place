@@ -27,7 +27,7 @@ return new class extends Migration
             $table->integer('toilet');
             $table->integer('toilet_condition');
             $table->boolean('ramp');
-            $table->json('images')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

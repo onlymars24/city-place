@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('descr');
-            $table->json('images')->nullable();
+            $table->string('image')->nullable();
             $table->float('location_x');
             $table->float('location_y');
             $table->string('location_address');
