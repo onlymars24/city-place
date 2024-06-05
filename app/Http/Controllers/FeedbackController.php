@@ -14,15 +14,7 @@ class FeedbackController extends Controller
             'text' => $request->text,  
             'user_id' => Auth::id(),
             'place_id' => $request->place_id,  
-            'branches_amount' => $request->branches_amount,  
-            'branches_condition' => $request->branches_condition,  
-            'trashes_amount' => $request->trashes_amount,  
-            'trashes_condition' => $request->trashes_condition,  
-            'light' => $request->light,  
-            'common_condition' => $request->common_condition,  
-            'toilet' => $request->toilet,  
-            'toilet_condition' => $request->toilet_condition,  
-            'ramp' => $request->ramp,  
+            'score' => $request->score,  
             'images' => $request->images,            
         ]);
         return response([
@@ -45,6 +37,6 @@ class FeedbackController extends Controller
     }
 
     public function uploadImages(Request $request){
-        
+
     }
 }
