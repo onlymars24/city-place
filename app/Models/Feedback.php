@@ -14,6 +14,6 @@ class Feedback extends Model
         'user_id',
         'place_id',
         'score',
-        'images',
+        'image',
     ];
 }
