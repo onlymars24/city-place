@@ -18,6 +18,16 @@ class FeedbackController extends Controller
             'score' => $request->score,  
             'images' => $request->images,            
         ]);
+        $place = $feedback->place;
+        $feedbacks = $place->feedbacks;
+        $sumScore = 0;
+        foreach($feedbacks as $feedback){
+            $sumScore += $feedback->score;
+        }
+        $place->score = $sumScore / count($feedbacks);
+        $place->save();
+
+
         return response([
             'feedback' => $feedback
         ]);

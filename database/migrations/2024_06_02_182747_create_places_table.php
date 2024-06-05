@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('descr');
+            $table->float('score')->nullable();
             $table->string('image')->nullable();
             $table->float('location_x');
             $table->float('location_y');

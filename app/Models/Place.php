@@ -12,6 +12,7 @@ class Place extends Model
     protected $fillable = [
         'name',
         'descr',
+        'score',
         'image',
         'location_x',
         'location_y',
