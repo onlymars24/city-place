@@ -64,7 +64,7 @@ class PlaceController extends Controller
     }
 
     public function uploadAvatar(Request $request){
-        if($request->hasFile('image')){
+        if($request->hasFile('avatar')){
             // ImageService::upload('feedback', $request->file('image'), $request->feedbackId);
             $file = $request->file('avatar');
             $path = $file->store('image');
