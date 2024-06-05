@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Type;
 use App\Models\Place;
 use Illuminate\Http\Request;
-use App\Services\ImageService;
+use App\Service\ImageService;
 use Illuminate\Support\Facades\DB;
 
 class PlaceController extends Controller

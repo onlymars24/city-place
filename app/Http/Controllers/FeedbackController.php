@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Place;
 use App\Models\Feedback;
 use Illuminate\Http\Request;
-use App\Services\ImageService;
+use App\Service\ImageService;
 use Illuminate\Support\Facades\Auth;
 
 class FeedbackController extends Controller
