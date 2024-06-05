@@ -59,7 +59,7 @@ class PlaceController extends Controller
 
     public function uploadImage(Request $request){
         if($request->hasFile('image')){
-            ImageService::upload('places', $request->file('image'), $request->feedbackId);
+            ImageService::upload('places', $request->file('image'), $request->placeId);
         }
     }
 
@@ -68,9 +68,9 @@ class PlaceController extends Controller
             // ImageService::upload('feedback', $request->file('image'), $request->feedbackId);
             $file = $request->file('avatar');
             $path = $file->store('image');
-            $row = DB::table('places')->find($request->feedbackId);
+            $row = DB::table('places')->find($request->placeId);
             $filePath = public_path($row->image);
-            DB::table('places')->where('id', $request->feedbackId)->update(['avatar' => $path]);
+            DB::table('places')->where('id', $request->placeId)->update(['avatar' => $path]);
         }
     }
 }
