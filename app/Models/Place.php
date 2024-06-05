@@ -31,6 +31,6 @@ class Place extends Model
 
     public function feedbacks()
     {
-        return $this->belongsToMany(Feedback::class);
+        return $this->hasMany(Feedback::class);
     }
 }
