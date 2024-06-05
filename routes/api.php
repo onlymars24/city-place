@@ -40,5 +40,5 @@ Route::post('/place/create', [PlaceController::class, 'create']);
 Route::post('/place/edit', [PlaceController::class, 'edit']);
 
 Route::post('/feedback/create', [FeedbackController::class, 'create']);
-Route::get('/feedback/place', [FeedbackController::class, 'all']);
+Route::get('/feedback/place', [FeedbackController::class, 'place']);
 Route::get('/feedback', [FeedbackController::class, 'one']);
