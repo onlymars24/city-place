@@ -22,6 +22,7 @@ use App\Http\Controllers\FeedbackController;
 Route::middleware('auth:api')->group(function() {
     Route::get('/user', [AuthController::class, 'user']);
     Route::post('/user/edit', [AuthController::class, 'edit']);
+    Route::post('/user/upload/avatar', [AuthController::class, 'uploadAvatar']);
     Route::post('/favorite/add', [FavoriteController::class, 'add']);
     Route::post('/favorite/delete', [FavoriteController::class, 'delete']);
     Route::post('/feedback/create', [FeedbackController::class, 'create']);

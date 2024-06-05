@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -75,5 +76,16 @@ class AuthController extends Controller
         return response([
             'user' => $user
         ]);
+    }
+
+    public function uploadAvatar(Request $request){
+        if($request->hasFile('avatar')){
+            // ImageService::upload('feedback', $request->file('image'), $request->feedbackId);
+            $file = $request->file('avatar');
+            $path = $file->store('image');
+            $row = DB::table('users')->find(Auth::id());
+            $filePath = public_path($row->avatar);
+            DB::table('places')->where('id', Auth::id())->update(['avatar' => $path]);
+        }
     }
 }

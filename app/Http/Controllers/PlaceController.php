@@ -69,7 +69,7 @@ class PlaceController extends Controller
             $file = $request->file('avatar');
             $path = $file->store('image');
             $row = DB::table('places')->find($request->placeId);
-            $filePath = public_path($row->image);
+            $filePath = public_path($row->avatar);
             DB::table('places')->where('id', $request->placeId)->update(['avatar' => $path]);
         }
     }
