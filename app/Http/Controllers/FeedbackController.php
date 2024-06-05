@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Place;
 use App\Models\Feedback;
 use Illuminate\Http\Request;
+use App\Http\Services\ImageService;
 use Illuminate\Support\Facades\Auth;
 
 class FeedbackController extends Controller
@@ -36,7 +37,9 @@ class FeedbackController extends Controller
         ]);
     }
 
-    public function uploadImages(Request $request){
-
+    public function uploadImage(Request $request){
+        if($request->hasFile('image')){
+            ImageService::upload('feedback', $request->file('image'), $request->feedbackId);
+        }
     }
 }

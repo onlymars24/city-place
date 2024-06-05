@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Type;
 use App\Models\Place;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Services\ImageService;
 
 class PlaceController extends Controller
 {
@@ -53,5 +55,22 @@ class PlaceController extends Controller
         return response([
             'place' => $place
         ]);
+    }
+
+    public function uploadImage(Request $request){
+        if($request->hasFile('image')){
+            ImageService::upload('places', $request->file('image'), $request->feedbackId);
+        }
+    }
+
+    public function uploadAvatar(Request $request){
+        if($request->hasFile('image')){
+            // ImageService::upload('feedback', $request->file('image'), $request->feedbackId);
+            $file = $request->file('avatar');
+            $path = $file->store('image');
+            $row = DB::table('places')->find($request->feedbackId);
+            $filePath = public_path($row->image);
+            DB::table('places')->where('id', $request->feedbackId)->update(['avatar' => $path]);
+        }
     }
 }

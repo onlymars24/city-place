@@ -18,15 +18,7 @@ return new class extends Migration
             $table->text('text');
             $table->integer('user_id');
             $table->integer('place_id');
-            $table->integer('branches_amount');
-            $table->integer('branches_condition');
-            $table->integer('trashes_amount');
-            $table->integer('trashes_condition');
-            $table->integer('light');
-            $table->integer('common_condition');
-            $table->integer('toilet');
-            $table->integer('toilet_condition');
-            $table->boolean('ramp');
+            $table->integer('score');
             $table->string('image')->nullable();
             $table->timestamps();
         });
