@@ -13,15 +13,7 @@ class Feedback extends Model
         'text',
         'user_id',
         'place_id',
-        'branches_amount',
-        'branches_condition',
-        'trashes_amount',
-        'trashes_condition',
-        'light',
-        'common_condition',
-        'toilet',
-        'toilet_condition',
-        'ramp',
+        'score',
         'images',
     ];
 }
