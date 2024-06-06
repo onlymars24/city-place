@@ -16,5 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/qwerty', function () {
+    $place = Place::find(1);
+    $arrPlace = (array)json_decode($place->image);
+    unset($arrPlace[array_search('qaz', $arrPlace)]);
     
+    dd();
 });

@@ -18,4 +18,13 @@ class ImageService
             $image[] = $path;
             DB::table($table)->where('id', $id)->update(['image' => json_encode($image)]);
     }
+
+    public static function delete($table, $file, $id){
+        $row = DB::table($table)->find($id);
+        $image = (array)json_decode($row->image);
+
+        unset($image[array_search($file, $image)]);
+        
+        DB::table($table)->where('id', $id)->update(['image' => json_encode($image)]);
+}
 }

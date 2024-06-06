@@ -63,6 +63,10 @@ class PlaceController extends Controller
         }
     }
 
+    public function deleteImage(Request $request){
+        ImageService::delete('places', $request->file, $request->placeId);
+    }
+
     public function uploadAvatar(Request $request){
         if($request->hasFile('avatar')){
             // ImageService::upload('feedback', $request->file('image'), $request->feedbackId);

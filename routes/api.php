@@ -42,9 +42,12 @@ Route::get('/places/type', [PlaceController::class, 'type']);
 Route::post('/place/create', [PlaceController::class, 'create']);
 Route::post('/place/edit', [PlaceController::class, 'edit']);
 Route::post('/place/upload/image', [PlaceController::class, 'uploadImage']);
+Route::post('/place/delete/image', [PlaceController::class, 'deleteImage']);
+
 Route::post('/place/upload/avatar', [PlaceController::class, 'uploadAvatar']);
 
 
 Route::get('/feedback/place', [FeedbackController::class, 'place']);
 Route::get('/feedback', [FeedbackController::class, 'one']);
 Route::post('/feedback/upload/image', [FeedbackController::class, 'uploadImage']);
+Route::post('/feedback/delete/image', [FeedbackController::class, 'deleteImage']);

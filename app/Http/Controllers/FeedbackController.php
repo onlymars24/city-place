@@ -53,4 +53,8 @@ class FeedbackController extends Controller
             ImageService::upload('feedback', $request->file('image'), $request->feedbackId);
         }
     }
+
+    public function deleteImage(Request $request){
+        ImageService::delete('feedback', $request->file, $request->feedbackId);
+    }
 }
