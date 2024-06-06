@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
                 Place::create([
                     'name' => 'Название места '.$i.' '.$j,
                     'descr' => 'Описание места '.$i.' '.$j,
-                    'image' => "https://www.google.com/url?sa=i&url=https%3A%2F%2Ffk-ramps.ru%2Fprojects%2Fskejtpark-v-lagernom-sadu-tomsk&psig=AOvVaw0ZbMHQpUAD-oKQfUgt8Qs2&ust=1717441607456000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwjd6t_Yzr2GAxXKQVUIHZfICykQjRx6BAgAEBU",
+                    'image' => '["qwe", "qaz", "ghc"]',
                     'location_x' => 67.324125,
                     'location_y' =>  11.2313423,
                     'location_address' => 'дома',

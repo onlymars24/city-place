@@ -14,10 +14,8 @@ class ImageService
             // $file = $request->file('file');
             $path = $file->store('image');
             $row = DB::table($table)->find($id);
-            $filePath = public_path($row->image);
-            // if(File::exists($filePath)) {
-            //     File::delete($filePath);
-            // }
-            DB::table($table)->where('id', $id)->update(['image' => $path]);
+            $image = (array)json_decode($row->image);
+            $image[] = $path;
+            DB::table($table)->where('id', $id)->update(['image' => json_encode($image)]);
     }
 }

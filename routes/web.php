@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\Place;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,11 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/qwerty', function () {
-    $userId = 1;
-    $placeId = 2;
-    $user = User::with('favorites')->find($userId);
-    // dd($user);
-    // $user->favorites()->attach($placeId);
-    $user->favorites()->detach($placeId);
-
+    
 });
