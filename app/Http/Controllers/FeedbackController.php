@@ -33,6 +33,11 @@ class FeedbackController extends Controller
         ]);
     }
 
+    public function delete(Request $request){
+        $feedback = Feedback::find($request->feedbackId);
+        $feedback->delete();
+    }
+
     public function one(Request $request){
         $feedback = Feedback::where([['user_id', '=', Auth::id()], ['place_id', '=', $request->placeId]])->first();
         return response([

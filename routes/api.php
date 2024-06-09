@@ -26,7 +26,6 @@ Route::middleware('auth:api')->group(function() {
     Route::post('/favorite/add', [FavoriteController::class, 'add']);
     Route::post('/favorite/delete', [FavoriteController::class, 'delete']);
     Route::post('/feedback/create', [FeedbackController::class, 'create']);
-    
 });
 
 Route::post('/register', [AuthController::class, 'register']);
@@ -49,5 +48,6 @@ Route::post('/place/upload/avatar', [PlaceController::class, 'uploadAvatar']);
 
 Route::get('/feedback/place', [FeedbackController::class, 'place']);
 Route::get('/feedback', [FeedbackController::class, 'one']);
+Route::post('/feedback/delete', [FeedbackController::class, 'delete']);
 Route::post('/feedback/upload/image', [FeedbackController::class, 'uploadImage']);
 Route::post('/feedback/delete/image', [FeedbackController::class, 'deleteImage']);
